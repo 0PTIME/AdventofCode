@@ -1,0 +1,4 @@
+﻿  Source.cpp
+C:\Users\Z9HONG\Desktop\Puzzle\Puzzle\Source.cpp(110): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Z9HONG\Desktop\Puzzle\Puzzle\Source.cpp(102): warning C4717: 'runMenu': recursive on all control paths, function will cause runtime stack overflow
+  Puzzle.vcxproj -> C:\Users\Z9HONG\Desktop\Puzzle\Debug\Puzzle.exe

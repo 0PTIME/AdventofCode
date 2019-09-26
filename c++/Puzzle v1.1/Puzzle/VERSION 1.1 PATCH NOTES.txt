@@ -1,0 +1,5 @@
+*added a new revamped menu with a new option that allows you to change the amount of cycles so that in the case of not finding any repeating frequencies
+	your computing device dosen't spiral into constantly trying to find something that doesn't exist.
+
+*complete overhaul to the algorithm that was used in the previous version to solve the challenge in part 2, the previous version in its ideal form would 
+	be more realistic to the scenario but at the same time was so much more complicated than the challenge that required solving.
