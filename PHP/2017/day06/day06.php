@@ -2,21 +2,15 @@
 
 $input = file_get_contents('./input/input.txt');
 
-$mem = explode("\t", $input);
+$mem = explode("\t", trim($input));
 $cycles = 0;
 $new = $mem;
-echo "<table style=\"width: 100%\">";
+$test = true;
+$part = 2;
+$log[0] = $new;
 do{
 
     $max = max($new);
-    echo "<tr>";
-    echo "<td>max: " . $max . "</td>";
-    echo "<td>iteration: " . $cycles . "</td>";
-    foreach($new as $value){
-        echo "<td>" . $value . "</td>";
-    }
-    echo "</tr>";
-
     $key = array_search($max, $new);
     $new[$key] = 0;
     while($max > 0){
@@ -26,12 +20,37 @@ do{
         }
         else { $key = -1; }
     }
-    $cycles++;
-    if($cycles > 1000){
-        break;
+    if(in_array($new, $log))
+    {
+        $cycles++;
+        if($part == 1)
+        {
+            break;
+        }
+        elseif($part == 2)
+        {
+            if($test)
+            {
+                $cycles = 0;
+                $log = array();
+                array_push($log, $new);
+                $test = false;
+            }
+            else
+            {
+                break;
+            }
+        }
+
     }
-}while($mem != $new);
-echo "</table>";
+    else
+    {
+        $cycles++;
+        array_push($log, $new);
+    }
+
+}while($cycles < 10000);
+
 echo $cycles;
 
 ?>
